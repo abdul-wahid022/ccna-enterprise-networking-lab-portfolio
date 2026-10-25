@@ -135,10 +135,16 @@ You may view, reference and share a link to this work with credit. Commercial us
 
 ## Contact
 
-**Abdul Wahid**
+<p align="center">
+  <b>Abdul Wahid</b>
+</p>
 
-[![Email](https://img.shields.io/badge/EMAIL-0d1117?style=for-the-badge&logo=gmail&logoColor=white&color=00b4d8)](mailto:a.wahid7860668@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LINKEDIN-0d1117?style=for-the-badge&logo=linkedin&logoColor=white&color=00b4d8)](https://www.linkedin.com/in/abdul-wahid022)
-[![GitHub](https://img.shields.io/badge/GITHUB-0d1117?style=for-the-badge&logo=github&logoColor=white&color=00b4d8)](https://github.com/abdul-wahid022)
+<p align="center">
+  <a href="mailto:a.wahid7860668@gmail.com"><img src="https://img.shields.io/badge/EMAIL-0d1117?style=for-the-badge&logo=gmail&logoColor=white&color=00b4d8" alt="Email"/></a>
+  <a href="https://www.linkedin.com/in/abdul-wahid022"><img src="https://img.shields.io/badge/LINKEDIN-0d1117?style=for-the-badge&logo=linkedin&logoColor=white&color=00b4d8" alt="LinkedIn"/></a>
+  <a href="https://github.com/abdul-wahid022"><img src="https://img.shields.io/badge/GITHUB-0d1117?style=for-the-badge&logo=github&logoColor=white&color=00b4d8" alt="GitHub"/></a>
+</p>
 
-If this repository helped you, consider starring it.
+<p align="center">
+  If this repository helped you, consider starring it.
+</p>
