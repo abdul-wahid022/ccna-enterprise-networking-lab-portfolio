@@ -1,489 +1,180 @@
-# 🏢 Project 3: Head Quarter Network
+<h1 align="center">Head Quarter Network</h1>
 
-<div align="center">
+<h3 align="center">Enterprise headquarters with five departments, server farm, VoIP and wireless</h3>
 
-![HQ Network](https://img.shields.io/badge/Project-Head_Quarter-blue?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
-![Enterprise](https://img.shields.io/badge/Enterprise-Grade-purple?style=for-the-badge)
+<p align="center">
+  <img src="https://img.shields.io/badge/PROJECT-03-0d1117?style=for-the-badge&labelColor=0d1117&color=00b4d8" alt="Project"/>
+  <img src="https://img.shields.io/badge/STATUS-COMPLETE-0d1117?style=for-the-badge&labelColor=0d1117&color=00b4d8" alt="Status"/>
+  <img src="https://img.shields.io/badge/LEVEL-ADVANCED-0d1117?style=for-the-badge&labelColor=0d1117&color=00b4d8" alt="Level"/>
+</p>
 
-**A Complete Enterprise Headquarters Network Infrastructure**
-
-[🏠 Back to Main Portfolio](README.md)
-
-</div>
-
----
-
-## 📖 Table of Contents
-
-- [Overview](#-overview)
-- [Network Topology](#-network-topology)
-- [Project Specifications](#-project-specifications)
-- [Network Architecture](#-network-architecture)
-- [Department Details](#-department-details)
-- [Server Infrastructure](#-server-infrastructure)
-- [VoIP Implementation](#-voip-implementation)
-- [Wireless Network](#-wireless-network)
-- [Configuration](#-configuration)
-- [Learning Outcomes](#-learning-outcomes)
+<p align="center">
+  <a href="#overview"><b>Overview</b></a> ·
+  <a href="#network-topology"><b>Topology</b></a> ·
+  <a href="#design-specifications"><b>Specifications</b></a> ·
+  <a href="#network-architecture"><b>Architecture</b></a> ·
+  <a href="#departments"><b>Departments</b></a> ·
+  <a href="#server-infrastructure"><b>Servers</b></a> ·
+  <a href="#voip"><b>VoIP</b></a> ·
+  <a href="#wireless-network"><b>Wireless</b></a>
+</p>
 
 ---
 
-## 🎯 Overview
+## Overview
 
-The **Head Quarter Network** is a comprehensive enterprise-grade infrastructure supporting 5 departments with complete server infrastructure, VoIP integration, and wireless capabilities. This project demonstrates professional network design with redundancy, scalability, and advanced services.
+The Head Quarter Network is an enterprise-grade infrastructure supporting five departments with a full server farm, VoIP and wireless. It is designed with redundancy, scalability and centralized services.
 
-### Key Features:
-✅ 6 Centralized Servers
-✅ 5 Departments with full connectivity
-✅ VoIP System (IP Phones in every department)
-✅ Wireless LAN Controller (WLC)
-✅ HSRP for High Availability
-✅ LACP Link Aggregation
-✅ VLAN Segmentation
-✅ Radius AAA Authentication
+| | |
+| --- | --- |
+| **Departments** | IT, HR, Finance, Sales, Management |
+| **Servers** | 6 servers plus a RADIUS AAA server |
+| **Voice** | IP phone in every department |
+| **Wireless** | Wireless LAN Controller (WLC) |
+| **Redundancy** | HSRP on the core, LACP link aggregation |
+| **Security** | VLAN segmentation, RADIUS AAA |
 
----
+## Network Topology
 
-## 🗺 Network Topology
+<p align="center">
+  <img src="images/head-quarter-network-topology.png" alt="HQ Network Topology" width="800"/>
+</p>
 
-<div align="center">
-<img src="images/head-quarter-network-topology.png" alt="HQ Network Topology" width="700">
-</div>
+| Area | Location in topology |
+| ---- | -------------------- |
+| Core switches with HSRP (3560-24PS) | Center |
+| Server room (6 servers) | Top |
+| Five departments | Sides |
+| Voice router (2811) | Bottom |
+| WLC with VLAN 70 | Right |
 
-### Topology Layout:
-- **Center:** Core switches with HSRP (3560-24PS)
-- **Top:** Server room with 6 servers
-- **Sides:** 5 departments (IT, HR, Finance, Sales, Management)
-- **Bottom:** Voice Router (2811) for VoIP
-- **Right:** WLC (Wireless LAN Controller) with VLAN70
-
----
-
-## 📋 Project Specifications
+## Design Specifications
 
 | Specification | Details |
-|--------------|---------|
-| **Type** | Enterprise Headquarters |
-| **Scale** | Medium to Large |
+| ------------- | ------- |
+| **Type** | Enterprise headquarters |
+| **Scale** | Medium to large |
 | **Departments** | 5 (IT, HR, Finance, Sales, Management) |
-| **Servers** | 6 (DNS, Email, DHCP, FTP, Database, PT) |
-| **Core Switches** | 2x Cisco 3560-24PS (HSRP) |
-| **Access Switches** | 5x Cisco 2960-24TT |
+| **Servers** | 6 (DNS, Email, DHCP, FTP, Database, PT) plus RADIUS AAA |
+| **Core Switches** | 2× Cisco 3560-24PS (HSRP) |
+| **Access Switches** | 5× Cisco 2960-24TT |
 | **Voice Router** | Cisco 2811 |
-| **IP Phones** | 7960 Series (one per dept) |
+| **IP Phones** | 7960 series, one per department |
 | **Access Points** | 2901-FTT |
 | **IP Scheme** | 10.10.x.x |
 | **Redundancy** | HSRP + LACP |
 
----
-
-## 🏗 Network Architecture
-
-### Three-Tier Hierarchy:
+## Network Architecture
 
 ```
 ┌────────────────────────────────────────────┐
-│          CORE LAYER                        │
-│   3560-24PS (HSRP Active/Standby)         │
-│   - Inter-VLAN Routing                     │
-│   - LACP EtherChannel                      │
+│ CORE LAYER                                 │
+│ 3560-24PS (HSRP Active/Standby)            │
+│ Inter-VLAN routing · LACP EtherChannel     │
 └────────────┬───────────────────────────────┘
              │
 ┌────────────▼───────────────────────────────┐
-│      DISTRIBUTION LAYER                     │
-│   - Server Farm Connection                 │
-│   - Voice Router (2811)                    │
-│   - WLC for Wireless                       │
+│ DISTRIBUTION LAYER                         │
+│ Server farm · Voice router (2811) · WLC    │
 └────────────┬───────────────────────────────┘
              │
 ┌────────────▼───────────────────────────────┐
-│         ACCESS LAYER                        │
-│   2960-24TT Switches (5 departments)       │
-│   - End User Connectivity                  │
-│   - Access Points (2901-FTT)               │
+│ ACCESS LAYER                               │
+│ 2960-24TT switches (5 departments)         │
+│ End-user connectivity · Access points      │
 └────────────────────────────────────────────┘
 ```
 
----
+## IP Addressing
 
-## 🏢 Department Details
-
-### 1. IT Department (IT-User1, IT-User2)
-
-**VLAN:** 10
-**IP Range:** 10.10.10.x/24
-**Gateway:** 10.10.10.1
-
-**Equipment:**
-- Access Switch: 2960-24TT (AccessPoint-PT AP-FLOOR-1)
-- PC: IT-Admin, IT-Junior
-- IP Phone: 7960 (Extension: 1001)
-- Printer: Printer0
-- Tablets and Smartphones
-
-**Functions:**
-- Network administration
-- Technical support
-- Server management
-- System maintenance
-
----
-
-### 2. HR Department (HR-User1, HR-User2)
-
-**VLAN:** 20
-**IP Range:** 10.10.20.x/24
-**Gateway:** 10.10.20.1
-
-**Equipment:**
-- Access Switch: 2960-24TT (AccessPoint-PT AP-FLOOR-2)
-- PC: HR-Admin, HR-User2
-- IP Phone: 7960 (Extension: 1002)
-- Printer: Printer1
-- Tablets
-
-**Functions:**
-- Employee management
-- Recruitment
-- Payroll administration
-- HR records management
-
----
-
-### 3. Finance Department (Fin-User1, Fin-User2)
-
-**VLAN:** 30
-**IP Range:** 10.10.30.x/24
-**Gateway:** 10.10.30.1
-
-**Equipment:**
-- Access Switch: 2960-24TT (AccessPoint-PT AP-FLOOR-3)
-- PC: Fin-Admin, IP Phone2
-- IP Phone: 7960 (Extension: 1003)
-- Printer: Printer2
-- Tablets and Smartphones
-
-**Functions:**
-- Financial planning
-- Accounting
-- Budget management
-- Financial reporting
-
----
-
-### 4. Sales Department (Sales-User1, Sales-User2)
-
-**VLAN:** 40
-**IP Range:** 10.10.40.x/24
-**Gateway:** 10.10.40.1
-
-**Equipment:**
-- Access Switch: 2960-24TT (AccessPoint-PT AP-4-CONTROL-ROOM)
-- PC: Sales-Admin, Sales-User1
-- Tablet: TabletPC-PT
-- IP Phone: 7960 (Extension: 1004)
-- Printer: Printer3
-- Door IoT device
-
-**Functions:**
-- Sales operations
-- Customer relations
-- Sales reporting
-- Revenue management
-
----
-
-### 5. Management Department (CEO, Manager, MST-Admin)
-
-**VLAN:** 50
-**IP Range:** 10.10.50.x/24
-**Gateway:** 10.10.50.1
-
-**Equipment:**
-- Access Switch: 2960-24TT (AccessPoint-PT AP-MAINT)
-- Laptop: CEO, IT-Sr
-- PC: MST-Admin
-- IP Phone: 7960 (Extension: 1005)
-- Printer: Printer4
-- Additional IP Phone4
-
-**Functions:**
-- Strategic planning
-- Decision making
-- Company oversight
-- Executive operations
-
----
-
-## 💾 Server Infrastructure
-
-### Server Room Configuration
-
-**Location:** Top of topology
-**VLAN:** 90 (Server VLAN)
-**IP Range:** 10.10.90.x/24
-
-### 1. DNS Server (Server-PT DNS)
-**IP:** 10.10.90.10
-**Function:** Domain Name System
-- Name resolution
-- Forward and reverse lookup
-- Internal domain management
-
-### 2. Email Server (Server-PT Email)
-**IP:** 10.10.90.13
-**Function:** Corporate email
-- SMTP/POP3/IMAP services
-- Email storage
-- User mailboxes
-
-### 3. DHCP Server (Server-PT DHCP)
-**IP:** 10.10.90.11
-**Function:** IP address management
-- Dynamic IP assignment
-- IP pool management
-- Lease time configuration
-
-### 4. FTP Server (Server-PT FTP)
-**IP:** 10.10.90.14
-**Function:** File sharing
-- File upload/download
-- Centralized file storage
-- User access control
-
-### 5. Database Server (Server-PT Data Base)
-**IP:** 10.10.90.12
-**Function:** Data management
-- Application databases
-- Data storage
-- Query processing
-
-### 6. PT Server (Server-PT PT)
-**Function:** Additional services
-- Backup services
-- Testing environment
-- Application hosting
-
-### 7. Radius AAA (Local pes#123)
-**Function:** Authentication
-- User authentication
-- Authorization
-- Accounting
-- Centralized security
-
----
-
-### VoIP Features:
-- ✅ Inter-department calling
-- ✅ Extension-based dialing
-- ✅ Call transfer
-- ✅ Conference calling
-- ✅ Voicemail (future)
-
----
-
-## 📡 Wireless Network (WLC)
-
-### Wireless LAN Controller
-
-**Device:** WLC-PT (VLAN70)
-**IP:** 10.10.70.100
-**Management VLAN:** 70
-
-### Access Points Deployed:
-
-1. **AP-FLOOR-1** (IT Department)
-   - SSID: HQ-IT
-   - Security: WPA2
-   
-2. **AP-FLOOR-2** (HR Department)
-   - SSID: HQ-HR
-   - Security: WPA2
-
-3. **AP-FLOOR-3** (Finance Department)
-   - SSID: HQ-Finance
-   - Security: WPA2
-
-4. **AP-4-CONTROL-ROOM** (Sales Department)
-   - SSID: HQ-Sales
-   - Security: WPA2
-
-5. **AP-MAINT** (Management Department)
-   - SSID: HQ-Management
-   - Security: WPA2-Enterprise
-     
-### Wireless Features:
-- ✅ Centralized management via WLC
-- ✅ Department-specific SSIDs
-- ✅ WPA2 encryption
-- ✅ Roaming support
-- ✅ Guest network capability
-
----
-
-
-## 📊 IP Addressing Scheme
-
-| VLAN | Department | Network | Gateway | DHCP Pool |
-|------|------------|---------|---------|-----------|
-| 10 | IT | 10.10.10.0/24 | 10.10.10.1 | 10.10.10.100-200 |
-| 20 | HR | 10.10.20.0/24 | 10.10.20.1 | 10.10.20.100-200 |
-| 30 | Finance | 10.10.30.0/24 | 10.10.30.1 | 10.10.30.100-200 |
-| 40 | Sales | 10.10.40.0/24 | 10.10.40.1 | 10.10.40.100-200 |
-| 50 | Management | 10.10.50.0/24 | 10.10.50.1 | 10.10.50.100-200 |
-| 70 | Voice | 10.10.70.0/24 | 10.10.70.1 | 10.10.70.100-200 |
+| VLAN | Name | Network | Gateway | DHCP Pool |
+| ---- | ---- | ------- | ------- | --------- |
+| 10 | IT | 10.10.10.0/24 | 10.10.10.1 | 10.10.10.100 – 200 |
+| 20 | HR | 10.10.20.0/24 | 10.10.20.1 | 10.10.20.100 – 200 |
+| 30 | Finance | 10.10.30.0/24 | 10.10.30.1 | 10.10.30.100 – 200 |
+| 40 | Sales | 10.10.40.0/24 | 10.10.40.1 | 10.10.40.100 – 200 |
+| 50 | Management | 10.10.50.0/24 | 10.10.50.1 | 10.10.50.100 – 200 |
+| 70 | Voice | 10.10.70.0/24 | 10.10.70.1 | 10.10.70.100 – 200 |
 | 90 | Servers | 10.10.90.0/24 | 10.10.90.1 | Static IPs |
 
----
+## Departments
 
-## 🎓 Learning Outcomes
+| Department | VLAN | Network | Gateway | IP Phone | Access Point | Printer |
+| ---------- | ---- | ------- | ------- | -------- | ------------ | ------- |
+| IT | 10 | 10.10.10.0/24 | 10.10.10.1 | Ext. 1001 | AP-FLOOR-1 | Printer0 |
+| HR | 20 | 10.10.20.0/24 | 10.10.20.1 | Ext. 1002 | AP-FLOOR-2 | Printer1 |
+| Finance | 30 | 10.10.30.0/24 | 10.10.30.1 | Ext. 1003 | AP-FLOOR-3 | Printer2 |
+| Sales | 40 | 10.10.40.0/24 | 10.10.40.1 | Ext. 1004 | AP-4-CONTROL-ROOM | Printer3 |
+| Management | 50 | 10.10.50.0/24 | 10.10.50.1 | Ext. 1005 | AP-MAINT | Printer4 |
 
-### Skills Gained:
+Each department has a 2960-24TT access switch, PCs or laptops, tablets and smartphones. Sales also has a door IoT device.
 
-✅ **Enterprise Network Design:**
-- Multi-department infrastructure
-- Scalable architecture
-- Redundancy planning
-- Service integration
+| Department | Function |
+| ---------- | -------- |
+| IT | Network administration, technical support, server management, system maintenance |
+| HR | Employee management, recruitment, payroll administration, HR records |
+| Finance | Financial planning, accounting, budget management, reporting |
+| Sales | Sales operations, customer relations, sales reporting, revenue management |
+| Management | Strategic planning, decision making, company oversight, executive operations |
 
-✅ **High Availability:**
-- HSRP configuration
-- LACP implementation
-- Redundant core switches
-- Failover testing
+## Server Infrastructure
 
-✅ **VoIP Deployment:**
-- Voice router configuration
-- IP phone setup
-- Voice VLANs
-- Dial plan creation
+The server room sits on VLAN 90 (10.10.90.0/24).
 
-✅ **Wireless Networking:**
-- WLC deployment
-- AP management
-- SSID configuration
-- Wireless security
+| Server | IP Address | Function |
+| ------ | ---------- | -------- |
+| DNS | 10.10.90.10 | Name resolution, forward and reverse lookup, internal domain management |
+| DHCP | 10.10.90.11 | Dynamic IP assignment, pool management, lease configuration |
+| Database | 10.10.90.12 | Application databases, data storage, query processing |
+| Email | 10.10.90.13 | SMTP/POP3/IMAP services, mail storage, user mailboxes |
+| FTP | 10.10.90.14 | File upload and download, centralized file storage, user access control |
+| PT Server | — | Backup services, testing environment, application hosting |
+| RADIUS AAA | — | Authentication, authorization and accounting, centralized security |
 
-✅ **Server Infrastructure:**
-- Server farm design
-- Service distribution
-- DHCP/DNS integration
-- Email and FTP services
+## VoIP
 
-✅ **Security:**
-- VLAN segmentation
-- AAA authentication (Radius)
-- Access control
-- Network isolation
+| | |
+| --- | --- |
+| **Voice Router** | Cisco 2811 |
+| **IP Phones** | 7960 series, one per department (extensions 1001 – 1005) |
+| **Voice VLAN** | VLAN 70 |
 
----
+**Features:** inter-department calling, extension-based dialing, call transfer, conference calling, voicemail (planned).
 
-## 🔍 Advanced Features
+## Wireless Network
 
-### 1. Radius AAA Authentication
+The Wireless LAN Controller (WLC-PT) is managed on VLAN 70 at 10.10.70.100 and controls one access point per department.
 
-**Benefits:**
-- Centralized user management
-- Strong authentication
-- Authorization policies
-- Accounting and logging
+| Access Point | Department | SSID | Security |
+| ------------ | ---------- | ---- | -------- |
+| AP-FLOOR-1 | IT | HQ-IT | WPA2 |
+| AP-FLOOR-2 | HR | HQ-HR | WPA2 |
+| AP-FLOOR-3 | Finance | HQ-Finance | WPA2 |
+| AP-4-CONTROL-ROOM | Sales | HQ-Sales | WPA2 |
+| AP-MAINT | Management | HQ-Management | WPA2-Enterprise |
 
-### 2. LACP (Link Aggregation)
+**Features:** centralized management through the WLC, department-specific SSIDs, WPA2 encryption, roaming support, guest network capability.
 
-**Benefits:**
-- Increased bandwidth
-- Redundancy
-- Load balancing
-- Automatic failover
+## Technologies Implemented
 
-### 3. Inter-VLAN Routing
+| Technology | Role in this design |
+| ---------- | ------------------- |
+| **HSRP** | Redundant gateways on the two core switches |
+| **LACP** | Link aggregation for bandwidth and failover |
+| **Inter-VLAN Routing** | Controlled communication between departments |
+| **RADIUS AAA** | Centralized user authentication, authorization and accounting |
+| **VoIP** | Voice router, IP phones, dedicated voice VLAN |
+| **WLC** | Centralized wireless management |
 
-**Benefits:**
-- Department isolation
-- Controlled communication
-- Security policies
-- Traffic management
+## Scalability
 
----
-
-## 📈 Scalability
-
-This design supports:
-- Adding more departments (VLANs)
-- Increasing users per department
-- Adding more servers
-- Expanding wireless coverage
-- Connecting branch offices
-- Implementing WAN links
+The design supports more departments (VLANs), more users per department, more servers, wider wireless coverage, branch office connections and WAN links.
 
 ---
 
-## 🔧 Troubleshooting Guide
-
-### VoIP Issues:
-
-```cisco
-! Check voice VLAN
-show vlan brief | include 70
-
-! Verify phone registration
-show ip dhcp binding
-
-! Test connectivity
-ping [phone-ip]
-```
-
-### Wireless Issues:
-
-```cisco
-! On WLC, check AP status
-show ap summary
-
-! Check client connections
-show client summary
-
-! Verify SSID
-show wlan summary
-```
-
----
-
-## 🎯 Project Complexity
-
-**Difficulty Level:** ⭐⭐⭐⭐ (Advanced)
-
-**Time to Complete:** 8-10 hours
-
-**Prerequisites:**
-- Advanced networking knowledge
-- VLAN and routing experience
-- Understanding of VoIP
-- Wireless networking basics
-- HSRP/LACP concepts
-
----
-
-## 📚 Related Projects
-
-- **Previous:** [Project 2 - Smart School Automation](02-SCHOOL-AUTOMATION-README.md)
-- **Next:** [Project 4 - HQ V2 Security Enhanced](04-HQ-V2-SECURITY-README.md)
-- **Upgrade:** This project gets security enhancements in Project 4
-
----
-
-## 📞 Connect With Me
-
-<div align="center">
-
-[![Email](https://img.shields.io/badge/Email-a.wahid7860668%40gmail.com-red?style=for-the-badge&logo=gmail)](mailto:a.wahid7860668@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Abdul_Wahid-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/abdul-wahid022)
-[![GitHub](https://img.shields.io/badge/GitHub-abdul--wahid022-black?style=for-the-badge&logo=github)](https://github.com/abdul-wahid022)
-
-**💬 Questions? Need Packet Tracer files? Feel free to reach out!**
-
-[⬅️ Previous Project](02-SCHOOL-AUTOMATION-README.md) | [🏠 Back to Main](README.md) | [➡️ Next Project](04-HQ-V2-SECURITY-README.md)
-
-**Made with ❤️ by Abdul Wahid**
-
-</div>
+<p align="center">
+  <a href="./02-SCHOOL-AUTOMATION-README.md">← Previous: Smart School Automation</a> ·
+  <a href="./README.md">Projects Index</a> ·
+  <a href="../README.md">Main Repository</a> ·
+  <a href="./04-HQ-V2-SECURITY-README.md">Next: HQ V2 Security →</a>
+</p>
