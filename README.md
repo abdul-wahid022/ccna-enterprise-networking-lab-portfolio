@@ -1,483 +1,144 @@
-# 🌐 Computer Networks - Comprehensive Lab Repository
-
 <p align="center">
-  <img src="./images/banner.png" alt="Computer Networks" width="550"/>
+  <img src="./images/banner.png" alt="CCNA+ Enterprise Networking Labs" width="800"/>
 </p>
 
-<div align="center">
+<h1 align="center">Computer Networks Lab</h1>
 
-![Network Banner](https://img.shields.io/badge/Computer-Networks-blue?style=for-the-badge)
-![Cisco Packet Tracer](https://img.shields.io/badge/Cisco-Packet_Tracer-1BA0D7?style=for-the-badge&logo=cisco)
-![Semester](https://img.shields.io/badge/Semester-3-orange?style=for-the-badge)
+<h3 align="center">CCNA+ Enterprise Networking — Switching, Routing, WAN, Security &amp; Wireless</h3>
 
-**A complete collection of networking concepts, configurations, and practical implementations**
+<p align="center">
+  <img src="https://img.shields.io/badge/LEVEL-CCNA%2B-0d1117?style=for-the-badge&labelColor=0d1117&color=00b4d8" alt="Level"/>
+  <img src="https://img.shields.io/badge/TOOL-PACKET%20TRACER-0d1117?style=for-the-badge&labelColor=0d1117&color=00b4d8" alt="Tool"/>
+  <img src="https://img.shields.io/badge/PROJECTS-6-0d1117?style=for-the-badge&labelColor=0d1117&color=00b4d8" alt="Projects"/>
+  <img src="https://img.shields.io/badge/LABS-COMPLETED-0d1117?style=for-the-badge&labelColor=0d1117&color=00b4d8" alt="Status"/>
+</p>
 
-</div>
-
----
-
-## 📋 Table of Contents
-
-- [About This Repository](#-about-this-repository)
-- [Learning Path](#-learning-path)
-- [Topics Covered](#-topics-covered)
-- [Repository Structure](#-repository-structure)
-- [How to Use](#-how-to-use)
-- [Study Approach](#-study-approach)
-- [Navigation Tips](#-navigation-tips)
-- [Tools & Technologies](#-tools--technologies)
-- [Prerequisites](#-prerequisites)
-- [Connect With Me](#-connect-with-me)
+<p align="center">
+  <a href="#flagship-project"><b>Flagship</b></a> ·
+  <a href="#enterprise-projects"><b>Projects</b></a> ·
+  <a href="#lab-modules"><b>Lab Modules</b></a> ·
+  <a href="#technologies"><b>Technologies</b></a> ·
+  <a href="#repository-structure"><b>Structure</b></a> ·
+  <a href="#contact"><b>Contact</b></a>
+</p>
 
 ---
 
-## 🎯 About This Repository
+## Overview
 
-This repository contains my comprehensive learning journey through Computer Networks in my 3rd semester. Each topic includes:
+A hands-on networking portfolio built with **Cisco Packet Tracer** and Cisco IOS. It covers the full CCNA scope and goes well beyond it — **BGP, EIGRP, GRE, IPSec VPN, AAA (RADIUS/TACACS+), Zone-Based Firewall, VoIP and wireless controllers** — and applies everything in six enterprise-scale network designs.
 
-- ✅ Detailed theoretical concepts
-- ✅ Step-by-step lab configurations
-- ✅ Cisco Packet Tracer implementations
-- ✅ Troubleshooting guides
-- ✅ Best practices and security considerations
+Every lab module has its own README with the scenario, topology, device configurations, verification commands and result screenshots.
 
-**📊 Progress Tracking:** This repository showcases my learning process and hands-on experience.  
-**🎓 Project Outputs:** Final projects and implementation results are shared here [Network Engineering Projects Portfolio](Projects/README.md).
+**Reviewing this portfolio?** Start with the [flagship project](#flagship-project).
+**Learning networking?** Start with [Module 01](./01-Servers/README.md) and follow the order.
 
----
+> All labs run in simulated topologies. IP addresses, domains and credentials shown are lab-only values.
 
-## 🗺️ Learning Path
+## Flagship Project
 
-The topics are organized in a pedagogical sequence, building from fundamental concepts to advanced implementations:
+### PESI — Pakistan Emergency Smart Infrastructure
 
-### **Phase 1: Foundation & Segmentation**
-1. **Network Fundamentals** → [Servers](#01-servers)
-2. **Network Division** → [Subnetting](#02-subnetting)
-3. **Traffic Isolation** → [VLAN](#03-vlan)
+<p align="center">
+  <a href="./Projects/05-PESI-README.md">
+    <img src="./Projects/images/pesi-complete-topology.png" alt="PESI complete network topology" width="800"/>
+  </a>
+</p>
 
-### **Phase 2: Switching & Layer 2**
-4. **Loop Prevention** → [STP](#04-stp)
-5. **Link Aggregation** → [EtherChannel (LACP/PAgP)](#05-etherchannel)
-6. **Home Connectivity** → [Home Router](#06-home-router)
+A national emergency network connecting five sites — Emergency Response Center, Headquarters, two branch offices and a central distribution point.
 
-### **Phase 3: Security Fundamentals**
-7. **Port Protection** → [Port Security](#07-port-security)
-8. **VLAN Attacks** → [VLAN Security](#08-vlan-security)
-9. **DHCP Protection** → [DHCP Snooping](#09-dhcp-snooping)
+| | |
+| --- | --- |
+| **Scale** | 21 servers · 27+ VLANs · 14+ IP phones · 3,200+ user capacity |
+| **Routing** | OSPF multi-area (Areas 0, 1, 3) |
+| **Edge & Security** | Dual Cisco ASA firewalls · DMZ with public servers · site-to-site IPSec VPN |
+| **Connectivity** | Dual ISP (PTCL + Nayatel) · NAT/PAT |
+| **Resilience** | HSRP + LACP across sites |
+| **Services** | VoIP on every site · wireless via WLC · IoT security system |
 
-### **Phase 4: Routing Foundations**
-10. **Routing Concepts** → [Link State & Distance Vector](#10-link-state--distance-vector)
-11. **Routing Algorithms** → [Dijkstra & Bellman-Ford](#11-dijkstra--bellman-ford)
-12. **Routing Protocols** → [Static, RIP, OSPF, BGP](#12-routing-protocols)
+[**Read the full documentation →**](./Projects/05-PESI-README.md)
 
-### **Phase 5: Address Translation & WAN**
-13. **Address Translation** → [NAT/PAT](#13-natpat)
-14. **WAN Connectivity** → [PPP](#14-ppp)
-15. **Tunneling** → [GRE Tunneling](#15-gre-tunneling)
-16. **Secure Tunneling** → [VPN (IPSec)](#16-vpn-ipsec)
+## Enterprise Projects
 
-### **Phase 6: Advanced Services**
-17. **Wireless Networks** → [WLAN](#17-wlan)
-18. **Voice Services** → [VoIP](#18-voip)
-19. **High Availability** → [HSRP](#19-hsrp)
+| #  | Project | Focus | Core Tech |
+| -- | ------- | ----- | --------- |
+| 01 | [Mini Branch Network](./Projects/01-MINI-BRANCH-README.md) | Small branch office with five departments | `PAT` `HSRP` `OSPF` |
+| 02 | [Smart School Automation](./Projects/02-SCHOOL-AUTOMATION-README.md) | IoT-controlled bells, fans and motion sensing | `MCU` `IoT` |
+| 03 | [Head Quarter Network](./Projects/03-HQ-NETWORK-README.md) | HQ with six servers, VoIP and wireless | `LACP` `HSRP` `WLC` `VoIP` |
+| 04 | [HQ V2 — Security Enhanced](./Projects/04-HQ-V2-SECURITY-README.md) | Centralized authentication and secure management | `AAA` `RADIUS` `SSH` |
+| 05 | [PESI Infrastructure](./Projects/05-PESI-README.md) | Multi-site emergency network *(flagship)* | `OSPF` `IPSec` `ASA` `HSRP` |
+| 06 | [HQ & Branch with DMZ](./Projects/06-HQ-BRANCH-DMZ-README.md) | HQ–branch design with DMZ *(in progress)* | `DMZ` `ASA` `VPN` |
 
-### **Phase 7: Security & Access Control**
-20. **Network Security** → [Firewall](#20-firewall)
-21. **Access Lists** → [ACL](#21-acl)
-22. **Remote Access** → [SSH & Telnet](#22-ssh--telnet)
+All topologies and details: [Projects portfolio](./Projects/README.md)
 
----
+## Lab Modules
 
-## 📚 Topics Covered
+| #  | Module | Domain | Focus | Core Tech |
+| -- | ------ | ------ | ----- | --------- |
+| 01 | [Servers](./01-Servers/README.md) | Services | DNS, DHCP, HTTP, FTP, Email, Syslog, NTP, AAA | `DNS` `DHCP` `FTP` `NTP` `RADIUS` |
+| 02 | [Subnetting](./02-Subnetting/README.md) | Addressing | Fixed and variable length subnetting, IP planning | `FLSM` `VLSM` |
+| 03 | [VLAN](./03-VLAN/README.md) | Switching | Switch-to-switch links, inter-VLAN routing | `VLAN` `Router-on-a-Stick` `L3 Switch` |
+| 04 | [STP](./04-STP/README.md) | Switching | Loop prevention, root bridge election, port roles | `STP` |
+| 05 | [EtherChannel](./05-EtherChannel/README.md) | Switching | Link aggregation and load balancing | `LACP` `PAgP` |
+| 06 | [Home Router](./06-Home-Router/README.md) | SOHO | Home router setup, NAT, wireless, basic security | `NAT` `Wi-Fi` |
+| 07 | [Port Security](./07-Port-Security/README.md) | Layer 2 Security | MAC limiting, violation modes, sticky MAC | `Port Security` |
+| 08 | [VLAN Security](./08-VLAN-Security/README.md) | Layer 2 Security | VLAN hopping, double tagging, switch spoofing | `VLAN Hopping` `CDP` |
+| 09 | [DHCP Snooping](./09-DHCP-Snooping/README.md) | Layer 2 Security | Rogue DHCP prevention, trusted ports, rate limiting | `DHCP Snooping` |
+| 10 | [Link State & Distance Vector](./10-Link-State-Distance-Vector/README.md) | Routing | Protocol categories, comparison, convergence | `Link State` `Distance Vector` |
+| 11 | [Dijkstra & Bellman-Ford](./11-Dijkstra-Bellman-Ford/README.md) | Routing | Shortest-path algorithms behind OSPF and RIP | `Dijkstra` `Bellman-Ford` |
+| 12 | [Routing Protocols](./12-Routing-Protocols/README.md) | Routing | Static, dynamic and internet-scale routing | `Static` `RIP` `EIGRP` `OSPF` `BGP` |
+| 13 | [NAT / PAT](./13-NAT-PAT/README.md) | WAN | Static NAT, dynamic NAT, PAT overload | `NAT` `PAT` |
+| 14 | [PPP](./14-PPP/README.md) | WAN | Serial links and authentication | `PPP` `PAP` `CHAP` |
+| 15 | [GRE Tunneling](./15-GRE-Tunneling/README.md) | WAN | Tunnel interfaces, routing over tunnels | `GRE` |
+| 16 | [VPN (IPSec)](./16-VPN-IPSec/README.md) | WAN & VPN | Site-to-site VPN, encryption, authentication | `IPSec` |
+| 17 | [WLAN](./17-WLAN/README.md) | Wireless | Access points, wireless controller, WPA/WPA2 | `WLC` `WPA2` |
+| 18 | [VoIP](./18-VoIP/README.md) | Voice | Call Manager Express, dial plans, voice VLANs | `CME` `Voice VLAN` |
+| 19 | [HSRP](./19-HSRP/README.md) | High Availability | First-hop redundancy, priority and preemption | `HSRP` |
+| 20 | [Firewall](./20-Firewall/README.md) | Security | Zone-based firewall, policies, traffic filtering | `ZBF` |
+| 21 | [ACL](./21-ACL/README.md) | Security | Standard, extended and named ACLs, placement | `ACL` |
+| 22 | [SSH & Telnet](./22-SSH-Telnet/README.md) | Security | Secure remote access, VTY line security | `SSH` `Telnet` `VTY` |
 
-Click on any topic to navigate to its detailed documentation:
+## Technologies
 
-### 01. [Servers](./01-Servers/README.md)
-**Foundation Services**
-- DNS Server
-- DHCP Server
-- HTTP Server
-- FTP Server
-- Email Server
-- Syslog Server
-- NTP Server
-- AAA Server (RADIUS/TACACS+)
+| Category | Tools & Protocols |
+| -------- | ----------------- |
+| **Platform** | `Cisco Packet Tracer` `Cisco IOS` |
+| **Switching** | `VLAN` `STP` `EtherChannel` `HSRP` `Port Security` `DHCP Snooping` |
+| **Routing** | `Static` `RIP` `EIGRP` `OSPF` `BGP` |
+| **WAN & VPN** | `NAT/PAT` `PPP` `GRE` `IPSec` |
+| **Security** | `ACL` `Zone-Based Firewall` `Cisco ASA` `AAA` `SSH` |
+| **Wireless & Voice** | `WLC` `Access Points` `WPA2` `Call Manager Express` |
+| **Services** | `DNS` `DHCP` `HTTP` `FTP` `Email` `Syslog` `NTP` |
 
----
-
-### 02. [Subnetting](./02-Subnetting/README.md)
-**Network Segmentation**
-- FLSM (Fixed Length Subnet Masking)
-- VLSM (Variable Length Subnet Masking)
-- IP Address Planning
-- Subnet Calculations
-
----
-
-### 03. [VLAN](./03-VLAN/README.md)
-**Virtual LANs**
-- VLAN Configuration
-- Switch-to-Switch Communication
-- Router-on-a-Stick
-- Layer 3 Switch Configuration
-- Inter-VLAN Routing
-
----
-
-### 04. [STP](./04-STP/README.md)
-**Spanning Tree Protocol**
-- STP Fundamentals
-- Loop Prevention
-- Root Bridge Election
-- Port States and Roles
-
----
-
-### 05. [EtherChannel](./05-EtherChannel/README.md)
-**Link Aggregation**
-- LACP (Link Aggregation Control Protocol)
-- PAgP (Port Aggregation Protocol)
-- Manual Configuration
-- Load Balancing
-
----
-
-### 06. [Home Router](./06-Home-Router/README.md)
-**SOHO Networking**
-- Home Router Setup
-- NAT Configuration
-- Wireless Configuration
-- Basic Security Settings
-
----
-
-### 07. [Port Security](./07-Port-Security/README.md)
-**Switch Port Protection**
-- MAC Address Limiting
-- Violation Modes
-- Sticky MAC Addresses
-- Unused Port Security
-
----
-
-### 08. [VLAN Security](./08-VLAN-Security/README.md)
-**VLAN Attack Prevention**
-- CDP (Cisco Discovery Protocol) Security
-- VLAN Hopping Attacks
-- Double Tagging Prevention
-- Switch Spoofing Protection
-
----
-
-### 09. [DHCP Snooping](./09-DHCP-Snooping/README.md)
-**DHCP Security**
-- Rogue DHCP Server Prevention
-- DHCP Snooping Database
-- Trusted vs Untrusted Ports
-- Rate Limiting
-
----
-
-### 10. [Link State & Distance Vector](./10-Link-State-Distance-Vector/README.md)
-**Routing Protocol Categories**
-- Link State Protocols
-- Distance Vector Protocols
-- Comparison and Use Cases
-- Convergence Analysis
-
----
-
-### 11. [Dijkstra & Bellman-Ford](./11-Dijkstra-Bellman-Ford/README.md)
-**Routing Algorithms**
-- Dijkstra's Algorithm (OSPF)
-- Bellman-Ford Algorithm (RIP)
-- Shortest Path Calculation
-- Algorithm Comparison
-
----
-
-### 12. [Routing Protocols](./12-Routing-Protocols/README.md)
-**Dynamic & Static Routing**
-- Static Routing
-- RIP (Routing Information Protocol)
-- OSPF (Open Shortest Path First)
-- BGP (Border Gateway Protocol)
-- Dynamic Routing Implementation
-
----
-
-### 13. [NAT/PAT](./13-NAT-PAT/README.md)
-**Network Address Translation**
-- Static NAT
-- Dynamic NAT
-- PAT (Port Address Translation)
-- NAT Overload
-
----
-
-### 14. [PPP](./14-PPP/README.md)
-**Point-to-Point Protocol**
-- PPP Configuration
-- Authentication (PAP/CHAP)
-- WAN Connectivity
-- Serial Link Configuration
-
----
-
-### 15. [GRE Tunneling](./15-GRE-Tunneling/README.md)
-**Generic Routing Encapsulation**
-- GRE Tunnel Configuration
-- Multiprotocol Support
-- Tunnel Interfaces
-- Routing over Tunnels
-
----
-
-### 16. [VPN (IPSec)](./16-VPN-IPSec/README.md)
-**Virtual Private Networks**
-- IPSec VPN Configuration
-- Site-to-Site VPN
-- Encryption & Authentication
-- Tunnel Mode vs Transport Mode
-
----
-
-### 17. [WLAN](./17-WLAN/README.md)
-**Wireless Local Area Networks**
-- Access Point Configuration
-- WLC (Wireless LAN Controller) - Method 1
-- WLC (Wireless LAN Controller) - Method 2
-- Wireless Security (WPA/WPA2)
-- Connecting Laptops, PCs, Smartphones
-
----
-
-### 18. [VoIP](./18-VoIP/README.md)
-**Voice over IP**
-- VoIP Configuration
-- Call Manager Express
-- Dial Plans
-- Phone Registration
-- Voice VLANs
-
----
-
-### 19. [HSRP](./19-HSRP/README.md)
-**Hot Standby Router Protocol**
-- First Hop Redundancy
-- Virtual IP Configuration
-- Active/Standby Routers
-- Priority and Preemption
-
----
-
-### 20. [Firewall](./20-Firewall/README.md)
-**Network Security**
-- Firewall Configuration
-- Zone-Based Firewall
-- Security Policies
-- Traffic Filtering
-
----
-
-### 21. [ACL](./21-ACL/README.md)
-**Access Control Lists**
-- Standard ACL
-- Extended ACL
-- Named ACL
-- ACL Placement
-
----
-
-### 22. [SSH & Telnet](./22-SSH-Telnet/README.md)
-**Remote Access**
-- SSH Configuration (Secure)
-- Telnet Configuration
-- VTY Line Security
-- Authentication Methods
-
----
-
-## 📁 Repository Structure
+## Repository Structure
 
 ```
-computer-networks/
+computer-networks-lab/
+├── README.md
+├── LICENSE
+├── images/banner.png
 │
-├── README.md (This file)
-├── images/
-│   └── banner.png
+├── 01-Servers/ … 22-SSH-Telnet/     # one folder per module
+│   ├── README.md                    #   scenario, topology, configs, results
+│   └── images/                      #   screenshots
 │
-├── 01-Servers/
-│   └── README.md
-│
-├── 02-Subnetting/
-│   └── README.md
-│
-├── 03-VLAN/
-│   └── README.md
-│
-├── 04-STP/
-│   └── README.md
-│
-├── 05-EtherChannel/
-│   └── README.md
-│
-├── 06-Home-Router/
-│   └── README.md
-│
-├── 07-Port-Security/
-│   └── README.md
-│
-├── 08-VLAN-Security/
-│   └── README.md
-│
-├── 09-DHCP-Snooping/
-│   └── README.md
-│
-├── 10-Link-State-Distance-Vector/
-│   └── README.md
-│
-├── 11-Dijkstra-Bellman-Ford/
-│   └── README.md
-│
-├── 12-Routing-Protocols/
-│   └── README.md
-│
-├── 13-NAT-PAT/
-│   └── README.md
-│
-├── 14-PPP/
-│   └── README.md
-│
-├── 15-GRE-Tunneling/
-│   └── README.md
-│
-├── 16-VPN-IPSec/
-│   └── README.md
-│
-├── 17-WLAN/
-│   └── README.md
-│
-├── 18-VoIP/
-│   └── README.md
-│
-├── 19-HSRP/
-│   └── README.md
-│
-├── 20-Firewall/
-│   └── README.md
-│
-├── 21-ACL/
-│   └── README.md
-│
-└── 22-SSH-Telnet/
-    └── README.md
+└── Projects/
+    ├── README.md                    # portfolio overview
+    ├── 01-MINI-BRANCH-README.md … 06-HQ-BRANCH-DMZ-README.md
+    └── images/                      # topologies
 ```
 
----
+## License
 
-## 🚀 How to Use
+**© 2026 Abdul Wahid** — licensed under **[CC BY-NC-ND 4.0](./LICENSE)** (Attribution, NonCommercial, NoDerivatives).
+You may view, reference and share a link to this work with credit. Commercial use and redistributing modified copies are not permitted.
 
-### For Learning:
-1. **Follow the Learning Path**: Start from Phase 1 and progress sequentially
-2. **Explore Topics**: Click on any topic to view detailed documentation
-3. **Hands-on Practice**: Download Cisco Packet Tracer files and practice configurations
-4. **Review Concepts**: Each README contains theory, commands, and troubleshooting tips
+## Contact
 
-### For Recruiters/Professionals:
-- **GitHub**: View my learning process, configurations, and progression
-- **LinkedIn**: See completed projects, implementations, and final outputs
-- Navigate easily using the clickable topics above
+**Abdul Wahid**
 
----
+[![Email](https://img.shields.io/badge/EMAIL-0d1117?style=for-the-badge&logo=gmail&logoColor=white&color=00b4d8)](mailto:a.wahid7860668@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LINKEDIN-0d1117?style=for-the-badge&logo=linkedin&logoColor=white&color=00b4d8)](https://www.linkedin.com/in/abdul-wahid022)
+[![GitHub](https://img.shields.io/badge/GITHUB-0d1117?style=for-the-badge&logo=github&logoColor=white&color=00b4d8)](https://github.com/abdul-wahid022)
 
-## 📖 Study Approach
-
-This repository follows a structured learning path:
-
-1. **Conceptual Understanding** - High-level concepts and terminology
-2. **Technical Details** - Implementation specifics and protocols
-3. **Practical Applications** - Real-world examples and configurations
-4. **Troubleshooting** - Common issues and solutions
-
----
-
-## 🧭 Navigation Tips
-
-- Each topic has its own dedicated folder with detailed README
-- Use table of contents in each file for quick navigation
-- Examples progress from simple to complex
-- Key concepts are highlighted throughout
-- All configurations tested in Cisco Packet Tracer
-
----
-
-## 🛠️ Tools & Technologies
-
-<div align="center">
-
-| Tool | Purpose |
-|------|---------|
-| ![Cisco Packet Tracer](https://img.shields.io/badge/Cisco-Packet_Tracer-1BA0D7?style=flat-square&logo=cisco) | Network Simulation & Lab Implementation |
-| ![Markdown](https://img.shields.io/badge/Markdown-Documentation-000000?style=flat-square&logo=markdown) | Documentation |
-| ![Git](https://img.shields.io/badge/Git-Version_Control-F05032?style=flat-square&logo=git) | Version Control |
-| ![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github) | Code Hosting & Collaboration |
-
-</div>
-
----
-
-## 📚 Prerequisites
-
-Basic understanding of:
-- Computer operations
-- Network connectivity concepts
-- Binary number system (helpful but not required)
-
----
-
-## 📈 Progress Tracking
-
-- **Topics Completed**: 22/22 ✅
-- **Lab Exercises**: Comprehensive hands-on practice for each topic
-- **Documentation**: Individual README for each topic
-- **Projects**: Available on LinkedIn
-
----
-
-## 🤝 Contributing
-
-Feel free to:
-- Report errors or unclear explanations
-- Suggest additional examples
-- Propose new topics for coverage
-
----
-
-## 🤝 Connect With Me
-
-<div align="center">
-
-[![Email](https://img.shields.io/badge/Email-a.wahid7860668%40gmail.com-red?style=for-the-badge&logo=gmail)](mailto:a.wahid7860668@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Abdul_Wahid-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/abdul-wahid022)
-[![GitHub](https://img.shields.io/badge/GitHub-abdul--wahid022-black?style=for-the-badge&logo=github)](https://github.com/abdul-wahid022)
-
-</div>
-
----
-
-## 📝 License
-
-This repository is for educational purposes. Feel free to use the configurations and documentation for learning.
-
----
-
-<div align="center">
-
-**⭐ If you find this repository helpful, please consider giving it a star!**
-
-*Last Updated: January 2026*
-
-</div>
-
----
+If this repository helped you, consider starring it.
