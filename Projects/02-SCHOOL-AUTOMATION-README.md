@@ -1,90 +1,69 @@
-# 🏫 Project 2: Smart School Automation System
+<h1 align="center">Smart School Automation</h1>
 
-<div align="center">
+<h3 align="center">MCU-controlled IoT network for bells, climate, access and safety</h3>
 
-![School Automation](https://img.shields.io/badge/Project-Smart_School-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
-![IoT](https://img.shields.io/badge/IoT-Enabled-orange?style=for-the-badge)
+<p align="center">
+  <img src="https://img.shields.io/badge/PROJECT-02-0d1117?style=for-the-badge&labelColor=0d1117&color=00b4d8" alt="Project"/>
+  <img src="https://img.shields.io/badge/STATUS-COMPLETE-0d1117?style=for-the-badge&labelColor=0d1117&color=00b4d8" alt="Status"/>
+  <img src="https://img.shields.io/badge/LEVEL-INTERMEDIATE%20TO%20ADVANCED-0d1117?style=for-the-badge&labelColor=0d1117&color=00b4d8" alt="Level"/>
+</p>
 
-**An Innovative MCU-Controlled School Automation Network**
-
-[🏠 Back to Main Portfolio](README.md)
-
-</div>
-
----
-
-## 📖 Table of Contents
-
-- [Overview](#-overview)
-- [Network Topology](#-network-topology)
-- [Project Specifications](#-project-specifications)
-- [MCU & IoT Integration](#-mcu--iot-integration)
-- [Network Sections](#-network-sections)
-- [Automation Features](#-automation-features)
-- [Configuration](#-configuration)
-- [Learning Outcomes](#-learning-outcomes)
+<p align="center">
+  <a href="#overview"><b>Overview</b></a> ·
+  <a href="#network-topology"><b>Topology</b></a> ·
+  <a href="#design-specifications"><b>Specifications</b></a> ·
+  <a href="#mcu-architecture"><b>MCU</b></a> ·
+  <a href="#network-sections"><b>Sections</b></a> ·
+  <a href="#automation-features"><b>Automation</b></a>
+</p>
 
 ---
 
-## 🎯 Overview
+## Overview
 
-The **Smart School Automation System** is an innovative project that combines traditional networking with IoT and automation technologies. This project demonstrates how a **Microcontroller Unit (MCU)** can be programmed with Java to control various school devices, creating a smart and automated learning environment.
+The Smart School Automation System combines a traditional campus network with IoT and automation. A Microcontroller Unit (MCU) is programmed to control school devices, creating an automated learning environment.
 
-### Key Innovation:
-✅ MCU-based automation (Java programming)
-✅ Timer-controlled bell/siren system
-✅ Automated fan and AC control
-✅ Motion detector entrance security
-✅ Smart classroom management
-✅ Emergency response integration
-✅ Environmental monitoring
+| Capability | Description |
+| ---------- | ----------- |
+| **Bell System** | Timer-controlled bell and siren |
+| **Climate Control** | Automated fan and AC control |
+| **Access Security** | Motion detector entrance security |
+| **Classroom** | Smart classroom management |
+| **Safety** | Emergency response integration and environmental monitoring |
 
----
+## Network Topology
 
-## 🗺 Network Topology
+<p align="center">
+  <img src="images/mini-school-automation-topology.png" alt="Smart School Topology" width="800"/>
+</p>
 
-<div align="center">
-<img src="images/mini-school-automation-topology.png" alt="Smart School Topology" width="700">
-</div>
+| Area | Location in topology |
+| ---- | -------------------- |
+| Emergency System | Top left |
+| Access Host and Core Network | Top right / center |
+| Admin Section with servers | Right |
+| Smart Classroom | Bottom (blue box) — main feature of the project |
+| Smart sensors and IoT devices | Left side |
 
-### Topology Sections:
-- **Top Left:** Emergency System
-- **Top Right/Center:** Access Host & Core Network
-- **Right:** Admin Section with Servers
-- **Bottom (Blue Box):** Smart Classroom (Main Innovation)
-- **Left Side:** Various smart sensors and IoT devices
-
----
-
-## 📋 Project Specifications
+## Design Specifications
 
 | Specification | Details |
-|--------------|---------|
-| **Type** | Smart School IoT Network |
-| **Scale** | Single Campus |
-| **Main Technology** | MCU (Microcontroller) |
-| **Programming** | Java for MCU |
-| **Key Feature** | Automated Bell & Device Control |
-| **IoT Devices** | Fans, AC, Lights, Sensors |
-| **Security** | Motion Detectors, Access Control |
+| ------------- | ------- |
+| **Type** | Smart school IoT network |
+| **Scale** | Single campus |
+| **Main Technology** | MCU (Microcontroller Unit) |
+| **Programming** | MCU scripting |
+| **Key Feature** | Automated bell and device control |
+| **IoT Devices** | Fans, AC, lights, sensors |
+| **Security** | Motion detectors, access control |
 
----
+## MCU Architecture
 
-## 🤖 MCU & IoT Integration
-
-### What is MCU?
-
-**MCU = Microcontroller Unit**
-
-A small computer on a single integrated circuit that can be programmed to control various devices and sensors.
-
-### How It Works in This Project:
+An MCU is a small computer on a single integrated circuit that can be programmed to control devices and sensors. Here it acts as the control center for the campus.
 
 ```
 ┌─────────────────────────────────────────────┐
-│           MCU CONTROL CENTER                │
-│     (Programmed with Java Code)             │
+│               MCU CONTROL CENTER            │
 └──────────────┬──────────────────────────────┘
                │
        ┌───────┼───────┬───────┬────────┐
@@ -94,346 +73,157 @@ A small computer on a single integrated circuit that can be programmed to contro
    │ Bell  │      │Control│ │Ctrl│  │ Ctrl │
    └───────┘      └───────┘ └────┘  └──────┘
 ```
----
 
-## 🏗 Network Sections
+## Network Sections
 
-### 1. 🚨 Emergency System (Top Left)
+### Emergency System (top left)
 
-**Components:**
-- Emergency Access Point (E-PAN)
-- Smart Home/IoT Ethernet devices
-- Appliance Entrance sensors
-- E-FIRE alarm system
-- Siren Enterprise device
+| | |
+| --- | --- |
+| **Components** | Emergency access point (E-PAN), IoT Ethernet devices, appliance entrance sensors, E-FIRE alarm system, siren |
+| **Purpose** | Emergency communication, fire detection and alarm, quick response, safety monitoring |
+| **Connectivity** | Connected to the Access Host with wireless access and wired backup |
 
-**Purpose:**
-- Emergency communication
-- Fire detection and alarm
-- Quick response system
-- Safety monitoring
+### Admin Section (right, black box)
 
-**Connectivity:**
-- Connected to Access Host
-- Wireless emergency access
-- Wired backup connections
+| | |
+| --- | --- |
+| **Components** | Admin server room, admin PC, selection server |
+| **Functions** | Central management, user authentication, data storage, system monitoring, configuration management |
+| **Network** | Dedicated server VLAN, secure access controls, high-speed link to the core |
 
----
+### Smart Classroom (bottom, blue box)
 
-### 2. 🖥 Admin Section (Right Side - Black Box)
+The main feature of the project.
 
-**Components:**
-- Admin Server Room
-- PC-PT (Admin PC)
-- Server-PT (Selection Server)
-
-**Functions:**
-- Central management
-- User authentication
-- Data storage
-- System monitoring
-- Configuration management
-
-**Network Details:**
-- Dedicated server VLAN
-- Secure access controls
-- High-speed connectivity to core
-
----
-
-### 3. 📚 Smart Classroom (Bottom - Blue Box Highlighted)
-
-**This is the MAIN INNOVATION of the project!**
-
-**Components:**
-- **CLASS-B2100:** Smart controller
-- **Air Conditioner (CL-AC):** Climate control
-- **4 Laptop-PT (Student):** Student laptops (Student#1-4)
-- **CL Lamp#1 & CL Lamp#2:** Smart lights
-- **Door (CL-Door):** Automated entry
-- **Smoke Detector (CL-SR05):** Safety sensor
-- **CO Detector (CL-CO#1):** Environmental monitoring
-- **CL-Home#1 Monitor:** Status display
-- **Water Level Monitor (CL-Humid):** Environmental control
-
-**Smart Features:**
+| Component | Function |
+| --------- | -------- |
+| CLASS-B2100 | Smart controller |
+| Air Conditioner (CL-AC) | Climate control |
+| 4 student laptops (Student#1–4) | Classroom clients |
+| CL Lamp#1, CL Lamp#2 | Smart lighting |
+| Door (CL-Door) | Automated entry |
+| Smoke Detector (CL-SR05) | Safety sensor |
+| CO Detector (CL-CO#1) | Environmental monitoring |
+| CL-Home#1 Monitor | Status display |
+| Water Level Monitor (CL-Humid) | Environmental control |
 
 ```
-🔔 Automated Bell System
-   ├─ Timer-based ringing
-   ├─ Different tones for different times
-   └─ Synchronized across campus
-
-🌡️ Climate Control
-   ├─ AC auto-adjust based on temperature
-   ├─ Fan speed based on occupancy
-   └─ Energy-efficient operation
-
-💡 Lighting System
-   ├─ Auto on/off based on time
-   ├─ Motion-activated
-   └─ Brightness adjustment
-
-🚪 Access Control
-   ├─ Automated door lock/unlock
-   ├─ Time-based access
-   └─ Emergency override
-
-🔥 Safety Systems
-   ├─ Smoke detection
-   ├─ CO monitoring
-   ├─ Water level alerts
-   └─ Emergency notifications
+Bell System        Timer-based ringing, different tones for different times, synchronized across campus
+Climate Control    AC auto-adjust by temperature, fan speed by occupancy, energy-efficient operation
+Lighting           Auto on/off by time, motion-activated, brightness adjustment
+Access Control     Automated door lock/unlock, time-based access, emergency override
+Safety             Smoke detection, CO monitoring, water level alerts, emergency notifications
 ```
 
----
+### Core Network (center)
 
-### 4. 🌐 Core Network (Center)
+| | |
+| --- | --- |
+| **Devices** | Access Host, core switches, wireless controller, motion detectors |
+| **Connected to** | Emergency system, classroom, admin section, IoT devices |
 
-**Main Devices:**
-- **Access Host:** Central connectivity point
-- **Core Switches:** Distribution layer
-- **Wireless Controller:** Wi-Fi management
-- **Motion Detectors:** Environmental sensing
+### IoT Devices (left)
 
-**Connected To:**
-- Emergency system
-- Classroom
-- Admin section
-- IoT devices
+| | |
+| --- | --- |
+| **Devices** | Lawn sprinkler (Siren Enterprise#2), web camera, webcam car (mobile monitoring), door IoT sensors, environmental sensors |
+| **Functions** | Campus monitoring, security surveillance, environmental control, remote management |
 
----
+## Automation Features
 
-### 5. 📡 IoT Devices Network (Left Side)
+### Timer-based bell system
 
-**Smart Devices:**
-- Lawn Sprinkler (Siren Enterprise#2)
-- Web Camera
-- Webcam Car (Mobile monitoring)
-- Door IoT sensors
-- Environmental sensors
-
-**Functions:**
-- Campus monitoring
-- Security surveillance
-- Environmental control
-- Remote management
-
----
-
-## ⚙️ Automation Features
-
-### 1. Timer-Based Bell System
-
-**How It Works:**
 ```
 MCU Timer → Check Schedule → Ring Bell → Control Devices
 ```
 
-**Bell Schedule Example:**
-| Time | Event | Device Actions |
-|------|-------|----------------|
-| 08:00 | School Start | Unlock doors, Turn on lights |
-| 09:45 | Break Start | Ring bell, AC to economy mode |
-| 10:00 | Classes Resume | Ring bell, AC normal mode |
-| 12:30 | Lunch Break | Ring bell, Lights to minimum |
-| 13:30 | Classes Resume | Ring bell, Full power mode |
-| 15:30 | School End | Ring bell, Lock doors, Lights off |
+Example schedule:
 
----
+| Time | Event | Device actions |
+| ---- | ----- | -------------- |
+| 08:00 | School start | Unlock doors, turn on lights |
+| 09:45 | Break start | Ring bell, AC to economy mode |
+| 10:00 | Classes resume | Ring bell, AC normal mode |
+| 12:30 | Lunch break | Ring bell, lights to minimum |
+| 13:30 | Classes resume | Ring bell, full power mode |
+| 15:30 | School end | Ring bell, lock doors, lights off |
 
-### 2. Smart Fan Control
+### Smart fan control
 
-**Control Logic:**
-```java
-if (temperature > 28°C && occupancy > 10) {
-    fanSpeed = HIGH;
-} else if (temperature > 25°C) {
-    fanSpeed = MEDIUM;
-} else {
-    fanSpeed = LOW;
-}
+```
+if temperature > 28°C and occupancy > 10  →  fan speed HIGH
+else if temperature > 25°C                →  fan speed MEDIUM
+else                                      →  fan speed LOW
 ```
 
-**Features:**
-- Temperature-based speed control
-- Occupancy detection
-- Energy-efficient operation
-- Manual override option
+Temperature-based speed, occupancy detection, energy-efficient operation, manual override.
 
----
+### Motion detection
 
-### 3. Motion Detector System
+| | |
+| --- | --- |
+| **Locations** | Entrance gates, classroom doors, emergency exits, server room |
+| **Functions** | Detect movement, trigger lights, log access, raise security alerts |
 
-**Locations:**
-- Entrance gates
-- Classroom doors
-- Emergency exits
-- Server room
+### Environmental monitoring
 
-**Functions:**
-- Detect movement
-- Trigger lights
-- Log access
-- Security alerts
+| Sensor | Purpose |
+| ------ | ------- |
+| Smoke detector | Fire safety |
+| CO detector | Air quality |
+| Water level monitor | Flood prevention |
+| Temperature sensors | Climate control |
+| Humidity sensors | Comfort monitoring |
 
----
-
-### 4. Environmental Monitoring
-
-**Sensors:**
-- **Smoke Detector:** Fire safety
-- **CO Detector:** Air quality
-- **Water Level Monitor:** Flood prevention
-- **Temperature Sensors:** Climate control
-- **Humidity Sensors:** Comfort monitoring
-
-**Alerts:**
 ```
-IF smoke_detected:
+IF smoke detected:
     → Sound alarm
     → Send notification to admin
     → Activate sprinkler system
     → Unlock emergency exits
 ```
 
----
+## MCU Control Logic
 
-## 🔧 Configuration Examples
+Example of the control logic running on the MCU:
 
-### MCU Setup (Java)
-
-```java
-// Main School Automation Class
-public class SchoolAutomation {
-    
-    // Device objects
-    Bell schoolBell;
-    Fan[] classroomFans;
-    AC[] airConditioners;
-    Light[] lights;
-    Door[] doors;
-    
-    // Sensors
-    MotionSensor[] motionSensors;
-    SmokeSensor[] smokeSensors;
-    COSensor[] coSensors;
-    
-    // Timer for scheduled events
-    ScheduledExecutorService scheduler;
-    
-    public void initialize() {
-        // Initialize all devices
-        setupDevices();
-        setupSensors();
-        startScheduler();
-    }
-    
-    public void runBellSchedule() {
-        scheduler.scheduleAtFixedRate(() -> {
-            LocalTime now = LocalTime.now();
-            checkBellTime(now);
-        }, 0, 1, TimeUnit.SECONDS);
-    }
-    
-    private void checkBellTime(LocalTime now) {
-        for (BellTime bt : bellSchedule) {
-            if (now.equals(bt.time)) {
-                schoolBell.ring(bt.duration);
-                performScheduledActions(bt.actions);
-            }
-        }
-    }
-    
-    public void performScheduledActions(Actions actions) {
-        if (actions.contains(LIGHTS_ON)) {
-            turnOnAllLights();
-        }
-        if (actions.contains(DOORS_UNLOCK)) {
-            unlockAllDoors();
-        }
-        // More actions...
-    }
-    
-    // Emergency response
-    public void handleEmergency(EmergencyType type) {
-        switch(type) {
-            case FIRE:
-                soundAlarm();
-                unlockEmergencyExits();
-                notifyFireDepartment();
-                break;
-            case INTRUSION:
-                lockDoors();
-                alertSecurity();
-                recordCCTV();
-                break;
-        }
-    }
-}
 ```
----
+class SchoolAutomation:
 
-## 🎓 Learning Outcomes
+    devices:  schoolBell, classroomFans[], airConditioners[], lights[], doors[]
+    sensors:  motionSensors[], smokeSensors[], coSensors[]
+    scheduler: runs every second
 
-### Technical Skills:
+    runBellSchedule():
+        every 1 second:
+            now = currentTime()
+            for each bellTime in bellSchedule:
+                if now == bellTime.time:
+                    schoolBell.ring(bellTime.duration)
+                    performScheduledActions(bellTime.actions)
 
-✅ **IoT Integration:**
-- MCU programming with Java
-- Sensor integration
-- Device automation
-- Real-time control systems
+    performScheduledActions(actions):
+        if LIGHTS_ON in actions:    turnOnAllLights()
+        if DOORS_UNLOCK in actions: unlockAllDoors()
 
-✅ **Network Design:**
-- IoT device networking
-- VLAN segmentation for IoT
-- Wireless network for sensors
-- Secure device communication
+    handleEmergency(type):
+        FIRE      → soundAlarm(), unlockEmergencyExits(), notifyFireDepartment()
+        INTRUSION → lockDoors(), alertSecurity(), recordCCTV()
+```
 
-✅ **Automation:**
-- Timer-based scheduling
-- Event-driven programming
-- Conditional logic for devices
-- Emergency response systems
+## Traditional vs Smart
 
-✅ **Smart Building:**
-- Climate control automation
-- Lighting management
-- Access control systems
-- Environmental monitoring
+| Function | Traditional | This project |
+| -------- | ----------- | ------------- |
+| Bell | Manual ringing | Automated, timer-based, consistent |
+| Climate | Manual AC and fan switches | Adjusts to temperature and occupancy |
+| Doors | Manual locks | Time-based scheduled lock and unlock |
+| Safety | Separate alarm systems | Connected systems with automated response |
 
-✅ **Programming:**
-- Java for embedded systems
-- Object-oriented design
-- Event handling
-- Scheduling algorithms
+## Future Enhancements
 
----
-
-## 🔍 Key Innovations
-
-### 1. MCU-Controlled Bell System
-**Traditional:** Manual bell ringing
-**Smart:** Automated, timer-based, consistent
-
-### 2. Intelligent Climate Control
-**Traditional:** Manual AC/fan switches
-**Smart:** Auto-adjust based on temperature and occupancy
-
-### 3. Automated Access Control
-**Traditional:** Manual door locks
-**Smart:** Time-based, scheduled lock/unlock
-
-### 4. Integrated Safety
-**Traditional:** Separate alarm systems
-**Smart:** Connected, automated response
-
----
-
-## 🚀 Future Enhancements
-
-Possible upgrades:
-- AI-based attendance system using cameras
+- AI-based attendance using cameras
 - Energy consumption monitoring and optimization
 - Mobile app for remote control
 - Voice-activated classroom controls
@@ -442,103 +232,9 @@ Possible upgrades:
 
 ---
 
-## 📈 Project Benefits
-
-**For Students:**
-- Comfortable learning environment
-- Modern technology exposure
-- Safe and secure campus
-
-**For Teachers:**
-- Less time on manual tasks
-- Better classroom control
-- Focus on teaching
-
-**For Administration:**
-- Energy savings
-- Centralized control
-- Better resource management
-- Safety improvements
-
-**For Environment:**
-- Reduced energy waste
-- Efficient resource usage
-- Smart power management
-
----
-
-## 🔧 Troubleshooting
-
-### Common Issues:
-
-**Issue 1: Bell Not Ringing on Time**
-```java
-// Check timer configuration
-System.out.println("Current Time: " + getCurrentTime());
-System.out.println("Scheduled Times: " + bellSchedule);
-
-// Verify MCU connection
-checkMCUConnection();
-```
-
-**Issue 2: Sensors Not Responding**
-```cisco
-! Check VLAN connectivity
-show vlan brief
-show interfaces status
-
-! Verify sensor power
-show power inline
-```
-
-**Issue 3: AC Not Auto-Adjusting**
-```java
-// Debug temperature reading
-System.out.println("Current Temp: " + temperatureSensor.read());
-System.out.println("AC Mode: " + ac.getMode());
-
-// Check control logic
-verifyControlAlgorithm();
-```
-
----
-
-## 🎯 Project Complexity
-
-**Difficulty Level:** ⭐⭐⭐ (Intermediate-Advanced)
-
-**Time to Complete:** 6-8 hours
-
-**Prerequisites:**
-- Basic networking knowledge
-- Java programming basics
-- Understanding of IoT concepts
-- Packet Tracer IoT components
-
----
-
-## 📚 Related Projects
-
-- **Previous:** [Project 1 - Mini Branch Network](01-MINI-BRANCH-README.md)
-- **Next:** [Project 3 - Head Quarter Network](03-HQ-NETWORK-README.md)
-
----
-
-## 📞 Connect With Me
-
-<div align="center">
-
-[![Email](https://img.shields.io/badge/Email-a.wahid7860668%40gmail.com-red?style=for-the-badge&logo=gmail)](mailto:a.wahid7860668@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Abdul_Wahid-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/abdul-wahid022)
-[![GitHub](https://img.shields.io/badge/GitHub-abdul--wahid022-black?style=for-the-badge&logo=github)](https://github.com/abdul-wahid022)
-
-**💬 Questions? Need Packet Tracer files? Feel free to reach out!**
-
-
-
-
-[⬅️ Previous Project](01-MINI-BRANCH-README.md) | [🏠 Back to Main](README.md) | [➡️ Next Project](03-HQ-NETWORK-README.md)
-
-**Made with ❤️ by Abdul Wahid**
-
-</div>
+<p align="center">
+  <a href="./01-MINI-BRANCH-README.md">← Previous: Mini Branch Network</a> ·
+  <a href="./README.md">Projects Index</a> ·
+  <a href="../README.md">Main Repository</a> ·
+  <a href="./03-HQ-NETWORK-README.md">Next: Head Quarter Network →</a>
+</p>
